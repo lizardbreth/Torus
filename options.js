@@ -92,8 +92,8 @@ Torus.ext.options.rebuild = function() { //FIXME: what if options is active?
 	Torus.ext.options.ui.sidebar = document.createDocumentFragment();
 	for(var i in Torus.ext.options.dir) {
 		var li = document.createElement('li');
-			li.className = 'torus-option-group';
-			if(i == Torus.ext.options.selected) {li.classList.add('torus-option-group-selected');}
+			li.className = 'torus-sidebar-li-link';
+			if(i == Torus.ext.options.selected) {li.classList.add('torus-sidebar-li-link-selected');}
 			li.setAttribute('data-id', i);
 			li.textContent = Torus.util.cap(i);
 			li.addEventListener('click', Torus.ext.options.click_sidebar);
@@ -148,8 +148,8 @@ Torus.ext.options.render = function(group) {
 	}
 
 	for(var i = 0; i < Torus.ui.ids['sidebar'].children.length; i++) { //FIXME: what if options isn't active?
-		if(Torus.ui.ids['sidebar'].children[i].getAttribute('data-id') == group) {Torus.ui.ids['sidebar'].children[i].classList.add('torus-option-group-selected');}
-		else {Torus.ui.ids['sidebar'].children[i].classList.remove('torus-option-group-selected');}
+		if(Torus.ui.ids['sidebar'].children[i].getAttribute('data-id') == group) {Torus.ui.ids['sidebar'].children[i].classList.add('torus-sidebar-li-link-selected');}
+		else {Torus.ui.ids['sidebar'].children[i].classList.remove('torus-sidebar-li-link-selected');}
 	}
 
 	Torus.ui.ids['window'].appendChild(Torus.ext.options.ui['group_' + group]);

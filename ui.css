@@ -94,6 +94,19 @@
 #torus-sidebar img.torus-user-icon-staff {
 	margin-top: .2em;
 }
+#torus-sidebar li.torus-sidebar-li-link {
+	padding: .1em .5em;
+	background-color: #99f;
+	cursor: pointer;
+	font-size: larger;
+}
+#torus-sidebar li.torus-sidebar-li-link:hover {
+	background-color: #def;
+}
+#torus-sidebar li.torus-sidebar-li-link-selected,
+#torus-sidebar li.torus-sidebar-li-link-selected:hover {
+	background-color: #fff;
+}
 
 #torus-popup {
 	min-width: 15em;
@@ -260,3 +273,5 @@
 {{MediaWiki:Torus.js/options.css}}
 
 {{MediaWiki:Torus.js/ext/ccui.css}}
+
+{{MediaWiki:Torus.js/ext/logs.css}}

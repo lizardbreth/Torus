@@ -78,21 +78,22 @@ Torus.ui.remove_room = function(event) {
 	delete Torus.ui.ids['tab-' + event.room.id];
 }
 
-Torus.ui.render = function(el) {
+Torus.ui.render = function(el, active) {
 	if(!el) {el = Torus.ui.ids['window'];}
+	if(!active) {active = Torus.ui.active;}
 	var rooms = [];
 	var indexes = [];
-	var active = false;
+	var viewing_active = false;
 	for(var i = 0; i < Torus.ui.viewing.length; i++) {
-		if(Torus.ui.viewing[i] == Torus.ui.active) {active = true;}
+		if(Torus.ui.viewing[i] == active) {viewing_active = true;}
 		if(Torus.logs.messages[Torus.ui.viewing[i].id].length > 0) {
 			rooms.push(Torus.logs.messages[Torus.ui.viewing[i].id]);
 			indexes.push(Torus.logs.messages[Torus.ui.viewing[i].id].length - 1);
 		}
 	}
-	if(!active && Torus.logs.messages[Torus.ui.active.id].length > 0) {
-		rooms.push(Torus.logs.messages[Torus.ui.active.id]);
-		indexes.push(Torus.logs.messages[Torus.ui.active.id].length - 1);
+	if(!viewing_active && Torus.logs.messages[active.id].length > 0) {
+		rooms.push(Torus.logs.messages[active.id]);
+		indexes.push(Torus.logs.messages[active.id].length - 1);
 	}
 
 	var frag = document.createDocumentFragment(); //yo these things are so cool
@@ -966,7 +967,7 @@ Torus.ui.onload = function() {
 			var body = 'bodyContent';
 			document.getElementById('firstHeading').innerHTML = 'Torus';
 		}
-		document.getElementById(body).innerHTML = (document.getElementById('AdminDashboardHeader') ? '<div class="AdminDashboardGeneralHeader AdminDashboardArticleHeader"><h1>Torus</h1></div>' : '');
+		document.getElementById(body).innerHTML = (document.getElementById('AdminDashboardHeader') ? '<div class="AdminDashboardGeneralHeader AdminDashboardArticleHeader"><h1>Torus</h1></div>' : ''); //FIXME: innerHTML +=, ternary operator
 		document.getElementById(body).appendChild(Torus.ui.window);
 
 		if(wgUserName == null) {
@@ -1159,3 +1160,5 @@ Torus.add_listener('window', 'load', Torus.ui.onload);
 {{MediaWiki:Torus.js/options.js}}
 
 {{MediaWiki:Torus.js/ext/ccui.js}}
+
+{{MediaWiki:Torus.js/ext/logs.js}}
