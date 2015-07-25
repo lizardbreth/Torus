@@ -1,7 +1,7 @@
 /*** CSS for [[w:c:monchbox:MediaWiki:Torus.js]] ***/
 
 #torus a { 
-	color: #00C600 !important
+	color: #00AA00 !important
 }
 
 #torus {
@@ -168,7 +168,7 @@
 }
 #torus-sidebar li.torus-sidebar-button-selected,
 #torus-sidebar li.torus-sidebar-button-selected:hover {
-	background-color: #fff;
+	background-color: #373737;
 }
 
 #torus-popup {
@@ -241,8 +241,8 @@
 }
 #torus-popup a.torus-popup-action-disabled,
 #torus-popup a.torus-popup-action-disabled:hover {
-	background-color: #ddd;
-	color: #373737;
+	background-color: #373737;
+	color: #000;
 	cursor: default;
 }
 #torus-popup-modconfirm,

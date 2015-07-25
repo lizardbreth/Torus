@@ -14,12 +14,12 @@
 	display: block;
 	padding: .5em 0;
 	margin-bottom: 5px;
-	background-color: #99f;
+	background-color: #555555;
 	cursor: pointer;
 	font-size: 2em;
 	text-align: center;
 	text-decoration: none;
 }
 #torus-menu-extensions a:hover {
-	background-color: #def;
+	background-color: #373737;
 }
